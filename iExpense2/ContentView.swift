@@ -14,9 +14,14 @@ struct SecondView: View {
 }
 
 struct ContentView: View {
+    @State private var showingSheet = false
+
     var body: some View {
         Button("Show Sheet") {
-            // Show the sheet
+            showingSheet.toggle()
+        }
+        .sheet(isPresented: $showingSheet) {
+            SecondView()
         }
     }
 }
