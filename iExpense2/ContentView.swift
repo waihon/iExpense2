@@ -7,6 +7,20 @@
 
 import SwiftUI
 
+struct SecondView: View {
+    var body: some View {
+        Text("Second View")
+    }
+}
+
+struct ContentView: View {
+    var body: some View {
+        Button("Show Sheet") {
+            // Show the sheet
+        }
+    }
+}
+
 class User: ObservableObject {
     // @ObservableObject protocol has no requirements, and really all it
     // means is "we want other things to be able to monitor this for changes."
@@ -18,7 +32,7 @@ class User: ObservableObject {
     @Published var lastName = "Buggins"
 }
 
-struct ContentView: View {
+struct StateObjectContentView: View {
     // @StateObject is the other half of @State - it tells SwiftUI that we're
     // creating a new class instance that should be watched for any change
     // announcements.
