@@ -7,6 +7,26 @@
 
 import SwiftUI
 
+struct ContentView: View {
+    @State private var numbers = [Int]()
+    @State private var currentNumber = 1
+
+    var body: some View {
+        VStack {
+            List {
+                ForEach(numbers, id: \.self) {
+                    Text("Row \($0)")
+                }
+            }
+
+            Button("Add Number") {
+                numbers.append(currentNumber)
+                currentNumber += 1
+            }
+        }
+    }
+}
+
 struct SecondView: View {
     @Environment(\.dismiss) var dismiss
 
@@ -19,7 +39,7 @@ struct SecondView: View {
     }
 }
 
-struct ContentView: View {
+struct FirstContentView: View {
     @State private var showingSheet = false
 
     var body: some View {
