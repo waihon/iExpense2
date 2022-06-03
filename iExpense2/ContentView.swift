@@ -7,7 +7,19 @@
 
 import SwiftUI
 
+struct CodableUser: Codable {
+    let firstName: String
+    let lastName: String
+}
+
 struct ContentView: View {
+    var body: some View {
+        Text("Hello, world!")
+            .padding()
+    }
+}
+
+struct TapCountContentView: View {
     @AppStorage("Tap") private var tapCount = 0
 
     var body: some View {
