@@ -13,6 +13,9 @@ struct ContentView: View {
     var body: some View {
         Button("Tap count: \(tapCount)") {
             tapCount += 1
+            // UserDefaults.standard is the built-in instance of
+            // UserDefaults that is attached to our app.
+            UserDefaults.standard.set(tapCount, forKey: "Tap")
         }
     }
 }
