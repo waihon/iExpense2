@@ -8,14 +8,38 @@
 import SwiftUI
 
 struct CodableUser: Codable {
-    let firstName: String
-    let lastName: String
+    var firstName: String
+    var lastName: String
 }
 
 struct ContentView: View {
+    @State private var user: CodableUser
+
+    init() {
+        if let data = UserDefaults.standard.data(forKey: "UserData") {
+            let decoder = JSONDecoder()
+            if let decoded = try? decoder.decode(CodableUser.self, from: data) {
+                self.user = decoded
+                return
+            }
+        }
+        self.user = CodableUser(firstName: "Taylor", lastName: "Swift")
+    }
+
     var body: some View {
-        Text("Hello, world!")
+        Text("Hello, \(user.firstName) \(user.lastName)!")
             .padding()
+
+        Button("Save User") {
+            user.firstName = "Mariah"
+            user.lastName = "Carey"
+
+            let encoder = JSONEncoder()
+
+            if let data = try? encoder.encode(user) {
+                UserDefaults.standard.set(data, forKey: "UserData")
+            }
+        }
     }
 }
 
