@@ -9,10 +9,14 @@ import SwiftUI
 
 struct AddView: View {
     @ObservedObject var expenses: Expenses
+    // We don't need to specify a type for dismiss as Swift can figure it
+    // out thanks tot the @Environment property wrapper.
+    @Environment(\.dismiss) var dismiss
     @State private var name = ""
     @State private var type = "Personal"
     @State private var amount = 0.0
     @FocusState private var isFocused: Bool
+    @State private var firstAppear = true
 
     let types = ["Business", "Personal"]
 
@@ -36,11 +40,15 @@ struct AddView: View {
                 Button("Save") {
                     let item = ExpenseItem(name: name, type: type, amount: amount)
                     expenses.items.append(item)
+                    dismiss()
                 }
             }
             .onAppear() {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                    isFocused = true
+                if firstAppear {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) {
+                        isFocused = true
+                    }
+                    firstAppear.toggle()
                 }
             }
         }
