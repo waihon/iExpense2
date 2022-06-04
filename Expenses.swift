@@ -15,4 +15,17 @@ class Expenses: ObservableObject {
             }
         }
     }
+
+    init() {
+        if let savedItems = UserDefaults.standard.data(forKey: "Items") {
+            // .self is used to say that we mean we're referring to the
+            // type itself, known as the type object.
+            if let decodedItems = try? JSONDecoder().decode([ExpenseItem].self, from: savedItems) {
+                items = decodedItems
+                return
+            }
+        }
+
+        items = []
+    }
 }
