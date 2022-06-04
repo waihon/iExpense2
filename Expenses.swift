@@ -8,5 +8,5 @@
 import Foundation
 
 class Expenses: ObservableObject {
-    @Published var items = [Expenses]()
+    @Published var items = [ExpenseItem]()
 }
