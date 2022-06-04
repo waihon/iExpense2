@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4F636C37284B057200AF98D1 /* ExpenseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F636C36284B057200AF98D1 /* ExpenseItem.swift */; };
+		4F636C39284B063200AF98D1 /* Expenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F636C38284B063200AF98D1 /* Expenses.swift */; };
 		4F7D5F9E28434D3800194648 /* iExpense2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D5F9D28434D3800194648 /* iExpense2App.swift */; };
 		4F7D5FA028434D3800194648 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D5F9F28434D3800194648 /* ContentView.swift */; };
 		4F7D5FA228434D3A00194648 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F7D5FA128434D3A00194648 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 
 /* Begin PBXFileReference section */
 		4F636C36284B057200AF98D1 /* ExpenseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseItem.swift; sourceTree = "<group>"; };
+		4F636C38284B063200AF98D1 /* Expenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expenses.swift; sourceTree = "<group>"; };
 		4F7D5F9A28434D3800194648 /* iExpense2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iExpense2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F7D5F9D28434D3800194648 /* iExpense2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iExpense2App.swift; sourceTree = "<group>"; };
 		4F7D5F9F28434D3800194648 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -37,6 +39,7 @@
 		4F7D5F9128434D3800194648 = {
 			isa = PBXGroup;
 			children = (
+				4F636C38284B063200AF98D1 /* Expenses.swift */,
 				4F7D5F9C28434D3800194648 /* iExpense2 */,
 				4F7D5F9B28434D3800194648 /* Products */,
 			);
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F636C39284B063200AF98D1 /* Expenses.swift in Sources */,
 				4F7D5FA028434D3800194648 /* ContentView.swift in Sources */,
 				4F636C37284B057200AF98D1 /* ExpenseItem.swift in Sources */,
 				4F7D5F9E28434D3800194648 /* iExpense2App.swift in Sources */,
