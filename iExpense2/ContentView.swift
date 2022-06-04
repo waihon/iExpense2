@@ -7,12 +7,19 @@
 
 import SwiftUI
 
+struct ContentView: View {
+    var body: some View {
+        Text("Hello, world!")
+            .padding()
+    }
+}
+
 struct CodableUser: Codable {
     var firstName: String
     var lastName: String
 }
 
-struct ContentView: View {
+struct EncodeDecodeContentView: View {
     @State private var user: CodableUser
 
     init() {
