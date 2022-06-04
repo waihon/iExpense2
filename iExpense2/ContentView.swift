@@ -18,6 +18,14 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("iExpense")
+            .toolbar {
+                Button {
+                    let expense = ExpenseItem(name: "test", type: "Personal", amount: 5.0)
+                    expenses.items.append(expense)
+                } label: {
+                    Image(systemName: "plus")
+                }
+            }
         }
     }
 }
