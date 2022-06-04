@@ -12,6 +12,7 @@ struct AddView: View {
     @State private var name = ""
     @State private var type = "Personal"
     @State private var amount = 0.0
+    @FocusState private var isFocused: Bool
 
     let types = ["Business", "Personal"]
 
@@ -19,6 +20,7 @@ struct AddView: View {
         NavigationView {
             Form {
                 TextField("Name", text: $name)
+                    .focused($isFocused)
 
                 Picker("Type", selection: $type) {
                     ForEach(types, id: \.self) {
@@ -30,6 +32,11 @@ struct AddView: View {
                     .keyboardType(.decimalPad)
             }
             .navigationTitle("Add new expense")
+            .onAppear() {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                    isFocused = true
+                }
+            }
         }
     }
 }
