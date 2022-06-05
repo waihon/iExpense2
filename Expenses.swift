@@ -31,12 +31,6 @@ class Expenses: ObservableObject {
 
     func removeItems(_ expenseItems: [ExpenseItem]) {
         // https://developer.apple.com/forums/thread/665140
-        // Somehow `expenseItems` has only `contains(where:)` but doesn't
-        // have `contains(_ elements:)`.
-        //items.removeAll(where: { expenseItems.contains($0) })
-
-        for expenseItem in expenseItems {
-            items.removeAll(where: { $0.id == expenseItem.id })
-        }
+        items.removeAll(where: { expenseItems.contains($0) })
     }
 }
